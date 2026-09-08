@@ -1,6 +1,6 @@
 ---
 name: work-item-id-detection
-description: Extract an Azure DevOps work item ID from the current Git branch name using the MEPS branch patterns, prompting the user when none is found or several match. Use for resolving which work item the current branch belongs to. Triggers as a step of the MEPS commit, pull request and planning workflows.
+description: Extract an Azure DevOps work item ID from the current Git branch name using the branch patterns, prompting the user when none is found or several match. Use for resolving which work item the current branch belongs to. Triggers as a step of the commit, pull request and planning workflows.
 model: Haiku
 ---
 
@@ -26,7 +26,7 @@ Match the branch name against known patterns:
 The work item ID is the numeric portion of the match
 
 ### 3. Evaluate results
-   
+
 One ID found → use it automatically, inform: "Detected work item ID: {id} from branch: {branch-name}".
 Multiple IDs found → display all with source branches, ask user to pick one.
 No ID found → proceed to step 4.

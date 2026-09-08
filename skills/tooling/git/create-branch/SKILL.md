@@ -1,6 +1,6 @@
 ---
 name: create-branch
-description: Create and push a Git branch for an Azure DevOps work item using MEPS naming conventions — PBI/{id}-{slug} for Product Backlog Items, bugfix/{id}-{slug} for Bugs. Use for starting work on a work item across one or more MEPS repositories. Triggers when the user asks to create a branch for a work item.
+description: Create and push a Git branch for an Azure DevOps work item using naming conventions — PBI/{id}-{slug} for Product Backlog Items, bugfix/{id}-{slug} for Bugs. Use for starting work on a work item across one or more repositories. Triggers when the user asks to create a branch for a work item.
 model: Haiku
 ---
 

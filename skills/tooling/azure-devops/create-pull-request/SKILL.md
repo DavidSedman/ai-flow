@@ -1,6 +1,6 @@
 ---
 name: create-pull-request
-description: Create an Azure DevOps pull request from the current branch, with the code changes and a linked work item. Use for raising PRs in MEPS repositories. Triggers when the user asks to open, raise or create a pull request.
+description: Create an Azure DevOps pull request from the current branch, with the code changes and a linked work item. Use for raising pull requests against repositories. Triggers when the user asks to open, raise or create a pull request.
 model: Haiku
 ---
 
@@ -12,7 +12,7 @@ Tools: `mcp__azureDevOps__get_work_item`, `mcp__azureDevOps__create_pull_request
 
 Depends on: `repository-selection`, `work-item-id-detection`, `gather-work-item-details`
 
-Fallback: if the `azureDevOps` MCP server is unavailable, `az repos pr create -r {repo} -s {source} -t {target} --title "…" --work-items {id}` creates the PR and links the work item. Do not pass the description body via `--description`multiline HTML gets mangled by shell quoting, and markdown renders incorrectly in this ADO instance. Write the HTML to a JSON file (`{"description": "…"}`) and PATCH it instead: `az devops invoke --area git --resource pullRequests --route-parameters project=MEPS repositoryId={repo} pullRequestId={pr} --http-method PATCH --in-file {file} --encoding utf-8 --api-version 7.1`.
+Fallback: if the `azureDevOps` MCP server is unavailable, `az repos pr create -r {repo} -s {source} -t {target} --title "…" --work-items {id}` creates the PR and links the work item. Do not pass the description body via `--description`multiline HTML gets mangled by shell quoting, and markdown renders incorrectly in this ADO instance. Write the HTML to a JSON file (`{"description": "…"}`) and PATCH it instead: `az devops invoke --area git --resource pullRequests --route-parameters project={project} repositoryId={repo} pullRequestId={pr} --http-method PATCH --in-file {file} --encoding utf-8 --api-version 7.1`.
 
 ## Steps
 

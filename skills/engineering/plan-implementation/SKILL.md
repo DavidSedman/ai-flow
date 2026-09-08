@@ -1,7 +1,7 @@
 ---
 name: plan-implementation
 disable-model-invocation: true
-description: Perform a read-only gap analysis for an Azure DevOps work item and produce an actionable implementation plan, refreshing function dependency and sequence diagrams along the way. Use for scoping MEPS changes before any code is written. Triggers when the user asks to plan, scope or analyse a work item.
+description: Perform a read-only gap analysis for an Azure DevOps work item and produce an actionable implementation plan, refreshing function dependency and sequence diagrams along the way. Use for scoping change requests before any code is written. Triggers when the user asks to plan, scope or analyse a work item.
 ---
 
 # Plan Implementation

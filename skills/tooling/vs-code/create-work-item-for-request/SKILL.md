@@ -9,7 +9,7 @@ disable-model-invocation: true
 Create a Product Backlog Item (PBI) under Feature `326019`, from a request described by the user. Drafts user stories, supporting notes, and acceptance criteria from the request details, confirms the draft with the user, then creates the work item in Azure DevOps.
 
 Tools: `mcp__azureDevOps__create_work_item`
-Fallback: if the `azureDevOps` MCP server is unavailable, use `Bash`: `az boards work-item create --type "Product Backlog Item" --title "…" --fields "System.Description=…" "Microsoft.VSTS.Common.AcceptanceCriteria=…" --org <org> --project MEPS`, then `az boards work-item relation add --id {new-id} --relation-type parent --target-id 326019`. The org and project defaults (`whqmeps` / `MEPS`) are already configured for the MCP tool, so pass them explicitly only in the `az` fallback.
+Fallback: if the `azureDevOps` MCP server is unavailable, use `Bash`: `az boards work-item create --type "Product Backlog Item" --title "…" --fields "System.Description=…" "Microsoft.VSTS.Common.AcceptanceCriteria=…" --org <org> --project <project>`, then `az boards work-item relation add --id {new-id} --relation-type parent --target-id 326019`. The org and project defaults are already configured for the MCP tool, so pass them explicitly only in the `az` fallback.
 
 ## Steps
 
