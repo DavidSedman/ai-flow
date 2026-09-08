@@ -1,7 +1,7 @@
 ---
 name: develop-work-item
 disable-model-invocation: true
-description: Run the full development lifecycle for an Azure DevOps work item across MEPS repositories — branch creation, planning, a human approval gate, implementation, documentation, commit and pull request. Use for taking a work item from start to raised PR. Triggers when the user asks to develop, implement or work on a work item.
+description: Run the full development lifecycle for an Azure DevOps work item across repositories i work with. Branch creation, planning, a human approval gate, implementation, documentation, commit and pull request. Use for taking a work item from start to raised PR. Triggers when the user asks to develop, implement or work on a work item.
 ---
 
 # Develop Work Item

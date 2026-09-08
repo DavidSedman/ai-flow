@@ -1,6 +1,6 @@
 ---
 name: commit-changes
-description: Stage, commit and push all repository changes with a conventional commit message that references the Azure DevOps work item from the branch name. Use for committing MEPS work after implementation, across one or more repositories. Triggers when the user asks to commit and push, or as a step of the develop-work-item workflow.
+description: Stage, commit and push all repository changes with a conventional commit message that references the Azure DevOps work item from the branch name. Use for committing work after implementation, across one or more repositories. Triggers when the user asks to commit and push, or as a step of the develop-work-item workflow.
 model: Haiku
 ---
 

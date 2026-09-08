@@ -1,6 +1,6 @@
 ---
 name: repository-selection
-description: Detect the Git repositories present in the current VSCode multi-folder workspace and select one or more as the target of an operation, auto-selecting when only one exists. Use for resolving which MEPS repository a multi-repo workflow should act on. Triggers as the first step of the MEPS work item workflows.
+description: Detect the Git repositories present in the current VSCode multi-folder workspace and select one or more as the target of an operation, auto-selecting when only one exists. Use for resolving which repository a multi-repo workflow should act on. Triggers as the first step of the work item workflows.
 model: Haiku
 ---
 
