@@ -1,0 +1,30 @@
+{
+  "name": "skill-migration",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "skill-migration": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node24 --format=esm --packages=external --outfile=dist/index.js --banner:js=\"#!/usr/bin/env node\"",
+    "start": "npm run build && node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.2.1",
+    "archiver": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.5",
+    "@types/archiver": "^6.0.2",
+    "@types/node": "^24.0.0",
+    "@vitest/coverage-v8": "^5.0.0",
+    "adm-zip": "^0.6.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.7.3",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0"
+  }
+}
