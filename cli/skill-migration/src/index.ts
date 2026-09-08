@@ -1,9 +1,11 @@
-import { checkbox, confirm } from "@inquirer/prompts";
+import { checkbox, confirm, Separator } from "@inquirer/prompts";
 import { cp, mkdir, readdir, rm } from "node:fs/promises";
 import path from "node:path";
 import { backupSkillsDir } from "./backup.js";
 import { discoverSkills, type Skill } from "./discoverSkills.js";
 import { globalSkillsDir } from "./paths.js";
+
+const ALL_SKILLS = Symbol("all-skills");
 
 function pluralize(singular: string, plural: string, count: number): string {
   return count === 1 ? singular : plural;
@@ -14,10 +16,20 @@ function skillLabel(skill: Skill): string {
 }
 
 async function promptForSkills(skills: Skill[]): Promise<Skill[]> {
-  return checkbox({
+  const selected = await checkbox({
     message: "Select the skills to add to your global Claude skills folder:",
-    choices: skills.map((skill) => ({ name: skillLabel(skill), value: skill })),
+    choices: [
+      { name: "All skills", value: ALL_SKILLS as Skill | typeof ALL_SKILLS },
+      new Separator(),
+      ...skills.map((skill) => ({ name: skillLabel(skill), value: skill as Skill | typeof ALL_SKILLS })),
+    ],
   });
+
+  if (selected.includes(ALL_SKILLS)) {
+    return skills;
+  }
+
+  return selected.filter((item): item is Skill => item !== ALL_SKILLS);
 }
 
 async function backupAndClearExisting(): Promise<void> {
